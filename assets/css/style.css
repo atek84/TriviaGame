@@ -1,0 +1,27 @@
+body { 
+	background: url("../images/disco2.jpg");
+}
+
+.container {
+	background: url("../images/travoltaBW.jpeg");
+	text-align: center;
+	color: white;
+	padding-bottom: 65px;
+}
+
+.headline {
+	/*padding: 100px;*/
+	font-size: 99px;
+	color:#52686A;
+	padding-bottom: 75px;
+	/*padding-top: 100px;*/
+}
+
+#start {
+	padding: 60px 250px 60px 250px;
+	background-color: #ACBDC5;
+}
+
+#survey {
+	    color: #52686A;
+}

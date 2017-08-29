@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Trivia Game</title>
+  <!-- Added link to the jQuery Library -->
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="assets/css/style.css"> 
+  <link rel="stylesheet" href="assets/css/reset.css"> 
+  
+  <!-- Added a link to Bootstrap-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<div row="col-md-12">
+			<h2 class="headline">Travolta Trivia!</h2>
+		</div>
+		<br>
+		<div class="main-area">
+		<button type='button' id="start">Start</button>
+		<br>
+		</div>
+		<form id='survey'>
+          <div>
+            <h2 id="question0"></h2>
+            <label><input type ='radio' name = "guyMovie" value="a" id ="answer0"/>Pulp Fiction </label>
+            <label><input type ='radio' name = "guyMovie" value="b" id ="answer0"/>Gary </label>
+            <label><input type ='radio' name = "guyMovie" value="c" id ="answer0"/>Margret </label>
+            <label><input type ='radio' name = "guyMovie" value="d" id ="answer0"/>Tricky ricky </label>
+          </div>
+          <div>
+            <h2 id="question1"></h2>
+            <label><input type ='radio' name = "NicCage" value="a" id ="answer1"/>Pulp Fiction </label>
+            <label><input type ='radio' name = "NicCage" value="b" id ="answer1"/>Gary </label>
+            <label><input type ='radio' name = "NicCage" value="c" id ="answer1"/>Margret </label>
+            <label><input type ='radio' name = "NicCage" value="d" id ="answer1"/>Tricky ricky </label>
+          </div>
+          <div>
+            <h2 id="question2"></h2>
+            <label><input type ='radio' name = 'pounds' value="a" id ="answer2"/>Pulp Fiction </label>
+            <label><input type ='radio' name = 'pounds' value="b" id ="answer2"/>Gary </label>
+            <label><input type ='radio' name = 'pounds' value="c" id ="answer2"/>Margret </label>
+            <label><input type ='radio' name = 'pounds' value="d" id ="answer2"/>Tricky ricky </label>
+          </div>
+          <div>
+            <h2 id="question3"></h2>
+            <label><input type ='radio' name = 'huh' value="a" id ="answer3"/>Pulp Fiction </label>
+            <label><input type ='radio' name = 'huh' value="b" id ="answer3"/>Gary </label>
+            <label><input type ='radio' name = 'huh' value="c" id ="answer3"/>Margret </label>
+            <label><input type ='radio' name = 'huh' value="d" id ="answer3"/>Tricky ricky </label>
+          </div>
+          <div>
+            <h2 id="question4"></h2>
+            <label><input type ='radio' name = 'oscars' value="a" id ="answer4"/>Pulp Fiction </label>
+            <label><input type ='radio' name = 'oscars' value="b" id ="answer4"/>Gary </label>
+            <label><input type ='radio' name = "'oscars' value="c" id ="answer4"/>Margret </label>
+            <label><input type ='radio' name = 'oscars' value="d" id ="answer4"/>Tricky ricky </label>
+          </div>
+
+          <div>
+            <h2 id="question5"></h2>
+            <label><input type ='radio' name = 'religion' value="a" id ="answer5"/>Pulp Fiction </label>
+            <label><input type ='radio' name = 'religion' value="b" id ="answer5"/>Gary </label>
+            <label><input type ='radio' name = 'religion' value="c" id ="answer5"/>Margret </label>
+            <label><input type ='radio' name = 'religion' value="d" id ="answer5"/>Tricky ricky </label>
+          </div>
+
+          <br>
+          <br>
+
+
+          <button type= button id="check"> CHECK  </button>
+       
+        </form>
+		</div>
+		
+	</div>
+
+<script src="assets/javascript/app.js"></script>
+
+</body>
