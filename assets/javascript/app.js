@@ -1,15 +1,17 @@
 var travQuestions = [
-	{	question: "In which movie did John Travolta play a guy?"},
-	{	question: "What Blockbuster hit starred Nicolas Cage and Mr. Travolta?"},
-	{	question: "John Travolta can lift how many pounds?"},
-	{	question: "?"},
-	{	question: "What happened to John when he went to the Oscars in 2007?"},
-	{	question: "What's up with his religion??"}
+	{	question: "Which famous director is Mr. Cage related to?"},
+	{	question: "Nicolas Cage was inspired by which of these in changing his last name? "},
+	{	question: "Which movie did Nicolas Cage turn down a role offered by Jim Carrey?"},
+	{	question: "Nicolas Cage named one of his sons after which fictional character?"},
+	{	question: 'In which movie does he play a man with the nickname "Mad Dog"'},
+	{	question: "He won an Oscar for best actor in a leading role for which movie? "}
 ];
 
-var timerNumber = 40;
+var timerNumber = 60;
 var intervalId;
-
+var correct = 0;
+var incorrect = 0;
+var unanswered = 0;
 
 function run() {
       intervalId = setInterval(decrement, 1000);
@@ -19,7 +21,12 @@ function decrement() {
 	timerNumber--;
 	if (timerNumber === 0) {
 		stop();
-		alert("Time Up!");
+		$("#survey").hide();
+		$(".final-screen").show();
+		$("#correct").append(correct);
+		$("#incorrect").append(incorrect);
+		$("#incomplete").append(unanswered);
+		console.log(correct, incorrect, unanswered);
       }
     }
 
@@ -46,23 +53,22 @@ for (var i = 0; i < travQuestions.length; i++) {
 };
 
 var answers = {q1: 'a', q2: 'b', q3: 'c', q4: 'd', q5: 'a', q6: 'b'};
-var correct = 0;
-var incorrect = 0;
-var unanswered = 0;
+
 
 $('input:radio').click(function() {
     var container = $(this).parents('div');
     var question = $(this).attr('name');
     var answer = $(this).val();
 
+
     if(answers[question] === answer) {
     	correct++;
     } else if(answers[question] !== answer) {
     	incorrect++;
-    } else if($("input[type=radio]:checked").length > 0){						//Need to find out why it's not logging to unanswered
+    } else {
     	unanswered++;
-    	return false;
     }
+
     console.log(correct, incorrect, unanswered);
 });
 
