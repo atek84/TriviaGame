@@ -65,7 +65,7 @@ $('input:radio').click(function() {
     	correct++;
     } else if(answers[question] !== answer) {
     	incorrect++;
-    } else {
+    } else {					//Need to figure out how to add to the unanswered counter
     	unanswered++;
     }
 
