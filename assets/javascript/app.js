@@ -21,6 +21,7 @@ function decrement() {
 	timerNumber--;
 	if (timerNumber === 0) {
 		stop();
+		checkAnswers();
 		$("#survey").hide();
 		$(".final-screen").show();
 		$("#correct").append(correct);
@@ -33,6 +34,55 @@ function decrement() {
 function stop() {
 	clearInterval(intervalId);
     }
+
+function checkAnswers() {
+	answers = [
+	{
+		name: 'q1',
+		correctAnswer: 'a',
+		incorrectAnswer: ['b','c','d']
+	},
+	{
+		name: 'q2',
+		correctAnswer: 'b',
+		incorrectAnswer: ['a','c','d']
+	},
+	{
+		name: 'q3',
+		correctAnswer: 'c',
+		incorrectAnswer: ['a','b','d']
+	},
+	{
+		name: 'q4',
+		correctAnswer: 'd',
+		incorrectAnswer: ['a','b','c']
+	},
+	{
+		name: 'q5',
+		correctAnswer: 'a',
+		incorrectAnswer: ['b','c','d']
+	},
+	{
+		name: 'q6',
+		correctAnswer: 'b',
+		incorrectAnswer: ['a','c','d']
+	}];
+
+	for(var i = 0; i < answers.length; i++) {
+		var answersData = answers[i];
+		var radioChoice = 'input:radio[name=' + answersData.name + ']:checked';
+		var selectedRadio = $(radioChoice).val();
+
+		if(selectedRadio === answersData.correctAnswer) {
+			correct++;
+		} else if(selectedRadio === answersData.incorrectAnswer[0]) {
+			incorrect++;
+		} else {
+			unanswered++;
+		}
+
+	}
+}
 
 $(document).ready(function(){
 
@@ -52,28 +102,9 @@ for (var i = 0; i < travQuestions.length; i++) {
 	document.getElementById("question" + [i]).textContent = q
 };
 
-var answers = {q1: 'a', q2: 'b', q3: 'c', q4: 'd', q5: 'a', q6: 'b'};
-
-
-$('input:radio').click(function() {
-    var container = $(this).parents('div');
-    var question = $(this).attr('name');
-    var answer = $(this).val();
-
-
-    if(answers[question] === answer) {
-    	correct++;
-    } else if(answers[question] !== answer) {
-    	incorrect++;
-    } else {					//Need to figure out how to add to the unanswered counter
-    	unanswered++;
-    }
-
-    console.log(correct, incorrect, unanswered);
-});
-
 $("#check").click(function() {
-	$("#survey").hide();
+	$("#survey").hide();	
+	checkAnswers();
 	$(".final-screen").show();
 	stop();
 	$("#correct").append(correct);
@@ -82,16 +113,4 @@ $("#check").click(function() {
 	console.log(correct, incorrect, unanswered);
 	console.log(timerNumber);
 });
-
-
-
-
-
-
-
-
-
-
-
-
 });

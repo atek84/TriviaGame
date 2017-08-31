@@ -12,25 +12,30 @@ body {
 .headline {
 	/*padding: 100px;*/
 	font-size: 99px;
-	color:##FFED78;
+	color:#FFED8F;
 	padding-bottom: 75px;
 	/*padding-top: 100px;*/
+	opacity: 1;
 }
 
 #start {
 	padding: 60px 250px 60px 250px;
 	background-color: #ACBDC5;
+	opacity: 1;
 }
 
 #survey {
-	color: ##FFED78;
+	color: #FFED8F;
+	opacity: 1;
 }
 
 .final-screen {
-	color: ##FFED78;
+	color: #FFED8F;
+	opacity: 1;
 }
 
 #check {
 	background-color: #ACBDC5;
 	color: white;
+	opacity: 1;
 }
